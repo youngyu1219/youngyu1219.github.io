@@ -1,12 +1,20 @@
 @import "./styles.css";
 
 
-:root{
-    --h-title-color:#3948d2;
+:root {
+    --h-title-color: #0f3b68;
+    /* Academic deep blue */
+}
+
+body {
+    background-color: #f4f9fc !important;
+    /* Extremely light blue/grey */
 }
 
 .header {
-    border-bottom: solid 2px var(--bs-blue);
+    border-bottom: solid 2px #3b82f6;
+    /* Tailwind blue-500 */
+    background: rgba(255, 255, 255, 0.95);
     z-index: 10000;
 }
 
@@ -19,11 +27,12 @@
     padding: 10rem 0;
     background-position: center;
     background-size: cover;
-    height: 25rem;
+    height: 30rem;
 }
 
 .top-section h2 {
-    font-weight: 400;
+    font-weight: 500;
+    letter-spacing: 2px;
 }
 
 .top-section .top-section-content {
@@ -38,29 +47,36 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    /* Calm blue overlay on background image */
+    background: linear-gradient(135deg, rgba(15, 59, 104, 0.8), rgba(30, 64, 175, 0.6));
 }
 
-section header h2{
+section header h2 {
     font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
     color: var(--h-title-color);
     font-size: 2.3rem;
     line-height: 4rem;
 }
 
-section .main-body{
-    font-size: 1.3rem;
-    font-weight: 200;
-    line-height: 2.4rem;
+section .main-body {
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 2rem;
+    color: #334155;
+    /* Slate-700 */
 }
 
 
 .bg-gradient-primary-to-secondary-light {
-    background: linear-gradient(45deg, #fcfcfc, #ffffff) !important;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe) !important;
 }
 
 .bg-gradient-primary-to-secondary-gray {
-    background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9) !important;
+}
+
+.bg-gradient-primary-to-secondary-dark {
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd) !important;
 }
 
 
@@ -91,7 +107,7 @@ section .main-body{
 #avatar {
     position: relative;
     height: 0;
-    top:min(-65px,max(-100px,calc(-1*100vw/12)));
+    top: min(-65px, max(-100px, calc(-1*100vw/12)));
     max-width: 55em;
     margin: 0 1.5rem 0 0;
     float: right;
@@ -99,7 +115,7 @@ section .main-body{
 }
 
 #avatar img {
-    height: max(130px,min(200px,calc(100vw/6)));
+    height: max(130px, min(200px, calc(100vw/6)));
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -109,4 +125,45 @@ section .main-body{
     }
 }
 
+/* ===== 自定义工具类（替代 Tailwind）===== */
 
+/* 区块内边距 */
+.section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* 内容卡片 */
+.content-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eff6ff;
+    margin-top: 1.5rem;
+}
+
+/* 章节标题样式 */
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #0f3b68;
+    font-weight: 700;
+}
+
+/* 章节图标 */
+.section-icon {
+    color: #2563eb;
+    margin-right: 0.5rem;
+}
+
+/* 导航栏工具图标悬浮效果 */
+#mainNav .nav-link .bi-tools {
+    font-size: 1.25rem;
+    transition: color 0.2s ease;
+}
+
+#mainNav .nav-link:hover .bi-tools {
+    color: #2563eb;
+}

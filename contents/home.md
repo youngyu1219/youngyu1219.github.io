@@ -1,20 +1,24 @@
-[![XX](https://img.shields.io/badge/XX-github-blue?logo=github)](https://github.com/XX)
+[![Github](https://img.shields.io/badge/Github-youngyu1219-blue?logo=github)](https://github.com/youngyu1219)
 
-I'm currently pursuing a Master's degree in XX at the Department of XX, XX University, XX.
+我目前就读于**山东科技大学**，测绘与空间信息学院，**地理信息科学专业**（2023.09-至今）。
 
-#### Email  
-<code>XX@XX.XX</code>  
-<code>XX@XX.XX</code>
+#### 联系方式
+- **电话**: 19953684006
+- **邮箱**: `1319296120@qq.com`
 
-#### Education  
-**XX University**, Master of XX (XX – XX)  
-• GPA: XX/XX  
+#### 教育背景  
+**山东科技大学**, 理学学士 (2023.09 – 至今)  
+- **核心课程**: 地理信息服务与网络GIS（95）、计算机图形学（95）、数据结构与算法（94）、地图学（94）、土地管理与信息系统（94）、C#程序设计（93）、遥感数字图像处理（92）等。
+- **成绩与排名**: 平均绩点 3.7/5.0，专业排名 5/90。
+- **外语水平**: CET-4、CET-6
 
-**XX University**, Exchange student <br>  
-• As a XX, represented my college as an outstanding student for a XX exchange program.  
+#### 个人技能
+具备良好的编程和软件操作能力：
+- 通过计算机二级、三级考试。
+- 有较为丰富的 **ArcGIS Pro** 操作及建模经历，熟练操作 **ENVI**、**Zotero**、**Origin**，了解 Office 软件 VBA 宏开发。
+- 熟悉 **Python**、**JavaScript** 等语言及 **PostgreSQL**、**Redis** 等数据库的开发。
+- 有过 **Vue**、**Java SpringBoot**、**MapBox**、**Cesium**、**ArcGIS Maps SDK for JS** 等框架开发经验。
+- 熟悉开源机器学习库 **Scikit-learn**、可解释库 **SHAP**，具备调试和训练机器学习模型能力。
 
-**XX University**, Honours Bachelor of XX (XX – XX)  
-• GPA: XX/XX (top XX%)  
-
-#### Research Interests  
-XX, XX, XX, XX.
+#### 个人信息
+山东潍坊 | 2004.12 | 共青团员 | 汉族

@@ -1,21 +1,26 @@
-### **Software Engineer Intern**  
-**January 2025 – June 2025 | ByteDance**  
+### **科研经历**
 
-Worked on the development and optimization of large-scale recommendation systems, focusing on algorithm improvements and system efficiency enhancements. Contributed to real-time data processing pipelines and model optimization for personalized content delivery.
+**2025.05 - 2026.05 | 主持 | 国家级大创项目**  
+**项目名称**：雨洪慧眼——IML与水文模型协同驱动的城市雨洪韧性评估与决策平台  
+- 聚焦城市雨洪韧性评估与智能决策，结合多源数据融合和可解释机器学习技术，构建集评估、模拟与决策于一体的智能平台（国家级重点支持领域）。
+- 负责撰写技术路线中系统架构搭建可解释性空间机器学习框架的构建内容，利用Vue CLI创建绘制关键技术流程图，梳理并撰写国内外研究现状。
 
-#### Key Contributions:  
-- Developed and optimized recommendation algorithms to enhance user engagement and content relevance.  
-- Designed and implemented real-time data processing workflows to improve model inference efficiency.  
-- Conducted A/B testing and performance analysis to refine recommendation strategies based on user behavior data.  
+**2025.11 - 2026.03 | 主要成员参与横向课题 | 自然资源部北海生态中心**  
+**项目名称**：北海赤潮智能化预警模块开发平台  
+- 待补充···
 
 ---
 
-### **软件工程师实习生**  
-**2025年1月 – 2025年6月 | 字节跳动**  
+### **社会实践**
 
-负责大规模推荐系统的开发与优化，专注于算法改进和系统效率提升。参与实时数据处理管道的构建，并优化模型推理流程，以提升个性化内容推荐效果。
+- **2024.07 - 2024.08**: “益科”技术服务队暑期三下乡
+- **2023.10 - 2025.06**: “益科”技术服务队日常校园维修
 
-#### 主要贡献:  
-- 研发并优化推荐算法，提高用户互动率和内容相关性。  
-- 设计并实现实时数据处理流程，提升模型推理的计算效率。  
-- 进行A/B测试与性能分析，基于用户行为数据优化推荐策略。
+---
+
+### **学生工作**
+
+- **2023.09 - 至今**: 地信23-1班宣传委员
+- **2024.09 - 2025.06**: 山东科技大学校团委科创部技术组组长
+- **2024.09 - 2025.06**: 测绘学院大艺团器乐队队长
+- **2024.09 - 2025.06**: 测绘学院地理信息协会副会长

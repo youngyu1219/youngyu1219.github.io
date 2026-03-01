@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="开源工具集 - Yiyang Yu" />
+    <meta name="author" content="Yiyang Yu" />
+    <title>开源工具集 - Yiyang Yu</title>
+
+    <!-- Icon -->
+    <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+
+    <!-- Bootstrap icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet" />
+
+    <!-- Core theme CSS -->
+    <link type="text/css" href="static/css/styles.css" rel="stylesheet" />
+    <link type="text/css" href="static/css/main.css" rel="stylesheet" />
+
+    <!-- Bootstrap core JS -->
+    <script type="text/javascript" src="static/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* 工具页面专用样式 */
+        .tools-hero {
+            background: linear-gradient(135deg, #0f3b68, #1e40af);
+            color: #fff;
+            padding: 6rem 0 3rem;
+            text-align: center;
+        }
+
+        .tools-hero h1 {
+            font-family: "Kanit", sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .tools-hero p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 0 4rem;
+        }
+
+        .tool-card {
+            background: #fff;
+            border: 1px solid #e0f2fe;
+            border-radius: 0.75rem;
+            padding: 1.75rem;
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .tool-card:hover {
+            box-shadow: 0 8px 24px rgba(15, 59, 104, 0.12);
+            transform: translateY(-3px);
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .tool-card .tool-icon {
+            font-size: 2rem;
+            color: #2563eb;
+            margin-bottom: 0.75rem;
+        }
+
+        .tool-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f3b68;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-card p {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .tool-card .tool-status {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            margin-top: 0.75rem;
+            font-weight: 600;
+        }
+
+        .tool-card .status-ready {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .tool-card .status-dev {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body style="background-color: #f4f9fc;">
+
+    <!-- 导航栏 -->
+    <nav class="header navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+        <div class="container px-5">
+            <a class="navbar-brand fw-bold" href="index.html">于弋洋</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                MENU <i class="bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link me-lg-3" href="index.html#home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-lg-3" href="index.html#awards">AWARDS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-lg-3" href="index.html#experience">EXPERIENCE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-lg-3" href="index.html#publications">PUBLICATIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-lg-3 active" href="tools.html" title="开源工具"><i
+                                class="bi bi-tools"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 顶部横幅 -->
+    <section class="tools-hero">
+        <div class="container px-5">
+            <a href="index.html" class="back-link"><i class="bi bi-arrow-left"></i> 返回主页</a>
+            <h1><i class="bi bi-tools"></i> 开源工具集</h1>
+            <p>基于 GIS / 前端技术构建的实用在线工具</p>
+        </div>
+    </section>
+
+    <!-- 工具网格 -->
+    <div class="container px-5">
+        <div class="tools-grid">
+
+            <!-- 工具卡片 1 -->
+            <a href="tools/coord_transform.html" class="tool-card">
+                <div class="tool-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                <h3>GIS 坐标转换工具</h3>
+                <p>支持 WGS84、GCJ02、BD09 坐标系互转的单页在线工具，适用于地理数据预处理和校验。</p>
+                <span class="tool-status status-dev">开发中</span>
+            </a>
+
+            <!-- 工具卡片 2 -->
+            <a href="tools/geojson_viewer.html" class="tool-card">
+                <div class="tool-icon"><i class="bi bi-map-fill"></i></div>
+                <h3>GeoJSON 在线查看器</h3>
+                <p>轻量级在线加载和预览 GeoJSON 空间数据，支持样式自定义与要素信息查看。</p>
+                <span class="tool-status status-dev">开发中</span>
+            </a>
+
+            <!-- 工具卡片 3（示例占位） -->
+            <div class="tool-card" style="opacity: 0.5; cursor: default;">
+                <div class="tool-icon"><i class="bi bi-plus-circle-dotted"></i></div>
+                <h3>更多工具</h3>
+                <p>持续更新中，敬请期待更多基于 GIS 与前端技术的实用工具……</p>
+                <span class="tool-status status-dev">即将推出</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-bottom text-center py-5">
+        <div class="container px-5">
+            <div class="text-white-50 small">
+                <div class="mb-2">&copy; Yiyang Yu 2023-2027. All Rights Reserved.</div>
+                <a href="https://github.com/youngyu1219">Github</a>
+                <span class="mx-1">&middot;</span>
+                <a href="https://github.com/youngyu1219/youngyu1219.github.io/blob/main/LICENSE">License</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
