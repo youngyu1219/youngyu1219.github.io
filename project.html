@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="于弋洋的项目介绍"><title>项目详情 · YOUNG GIS</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .project-detail { min-height:100vh; padding:130px 0 90px; background:var(--paper2,#f4f8ff); }
+    .project-detail .container { max-width:980px; }
+    .project-back { display:inline-flex; margin-bottom:28px; color:var(--blue,#3978e8); text-decoration:none; }
+    .project-article { padding:clamp(24px,5vw,58px); background:#fff; border:1px solid #d9e5f6; border-radius:18px; box-shadow:0 12px 40px rgba(37,82,145,.08); }
+    .project-article .prose { max-width:none; }
+    .project-error { color:#667085; }
+    .project-article img { max-width:100%; height:auto; border-radius:12px; }
+    .project-cover { width:100%; max-height:430px; object-fit:cover; border-radius:14px; margin-bottom:30px; }
+    .nav.solid .nav-links a.active, .nav.solid .nav-links a:hover { color:#3978e8; }
+    .nav.solid .nav-links a::after { background:#3978e8; }
+  </style>
+</head>
+<body class="nav-solid">
+  <nav class="nav solid"><div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="seal">于</span><span><span class="brand-name">YOUNG GIS</span><span class="brand-sub">Yiyang Yu · GIS</span></span></a>
+    <button class="nav-toggle" aria-label="打开菜单"><span></span><span></span><span></span></button>
+    <div class="nav-links"><a href="index.html">首页</a><a href="index.html#featured" class="active">精选</a><a href="index.html#projects">项目</a><a href="about.html">关于我</a></div>
+  </div></nav>
+  <main class="project-detail"><div class="container">
+    <a class="project-back" href="index.html#featured">← 返回精选项目</a>
+    <article class="project-article"><div id="project-content" class="prose"><p class="project-error">正在读取项目内容…</p></div></article>
+  </div></main>
+  <script src="js/marked.min.js"></script><script src="js/project-detail.js"></script>
+</body>
+</html>

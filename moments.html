@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态 · 唠嗑 | 唐梓萌</title>
+    <meta name="description" content="唐梓萌的动态（朋友圈）：随手拍、零碎思考，也欢迎你留言、点赞、接话。">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="nav-solid">
+
+    <!-- 导航 -->
+    <nav class="nav">
+        <div class="nav-wrap">
+            <a class="brand" href="index.html">
+                <span class="seal">唐</span>
+                <span>
+                    <span class="brand-name">唐梓萌</span>
+                    <span class="brand-sub">Tang Zimeng · GIS</span>
+                </span>
+            </a>
+            <button class="nav-toggle" aria-label="打开菜单">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="archives.html">文章</a>
+                <a href="projects.html">项目</a>
+                <a href="about.html">关于我</a>
+                <a href="archives.html#timeline">归档</a>
+                <a href="tech.html">技术</a>
+                <a href="moments.html" class="active">动态</a>
+                <a href="gallery.html">图库</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页头 -->
+    <header class="page-hero">
+        <div class="container">
+            <div class="eyebrow">唠嗑 · 动态</div>
+            <h1>动态</h1>
+            <p>在这儿记录学习、项目和生活里的小片段。</p>
+        </div>
+    </header>
+
+    <!-- 主体 -->
+    <main class="section">
+        <div class="container">
+            <div class="narrow">
+                <div class="notice" id="notice" style="display:none">
+                    <span class="ico">⚠</span>
+                    <span>这里收录个人动态与生活记录。</span>
+                </div>
+
+                <!-- 管理员操作条（未登录时显示） -->
+                <div class="admin-bar" id="adminBar" style="display:none">
+                    <span class="admin-tip">✍️ 动态仅博主可发布，访客可以评论和点赞。</span>
+                    <button class="admin-login-btn" id="loginBtn" type="button">管理员登录</button>
+                </div>
+
+                <!-- 发布框（仅管理员登录后可见） -->
+                <div class="composer reveal" id="composer" style="display:none">
+                    <div class="composer-top">
+                        <div class="m-avatar" id="meAvatar">唐</div>
+                        <div class="composer-main">
+                            <textarea id="momentText" placeholder="此刻在想什么？写点什么吧……"></textarea>
+                            <div class="img-preview" id="imgPreview">
+                                <button class="rm" id="imgRemove" type="button" aria-label="移除图片">×</button>
+                                <img id="imgPreviewImg" alt="预览">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="composer-foot">
+                        <label class="img-btn">🖼 图片<input type="file" id="imgInput" accept="image/*"></label>
+                        <div class="nick">昵称 <input type="text" id="nick" maxlength="20" placeholder="匿名"></div>
+                        <button class="publish" id="publishBtn" type="button">发 布</button>
+                        <button class="logout-btn" id="logoutBtn" type="button">退出登录</button>
+                    </div>
+                </div>
+
+                <!-- 信息流 -->
+                <div class="feed" id="feed"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 管理员登录弹窗 -->
+    <div class="modal-mask" id="loginModal">
+        <div class="modal-box">
+            <h3>管理员登录</h3>
+            <p>动态仅博主本人可发布，请输入管理密码。</p>
+            <input type="password" id="loginPw" placeholder="管理密码" autocomplete="current-password">
+            <div class="modal-err" id="loginErr"></div>
+            <div class="modal-btns">
+                <button type="button" class="mb-cancel" id="loginCancel">取消</button>
+                <button type="button" class="mb-ok" id="loginOk">登 录</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html">
+                        <span class="seal">唐</span>
+                        <span>
+                            <span class="brand-name">唐梓萌</span>
+                            <span class="brand-sub">Tang Zimeng · GIS</span>
+                        </span>
+                    </a>
+                    <p>记录学习笔记、项目复盘、零碎思考、个人成长和生活片段。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>导 航</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="archives.html">文章归档</a></li>
+                        <li><a href="projects.html">项目</a></li>
+                        <li><a href="about.html">关于我</a></li>
+                        <li><a href="tech.html">技术说明</a></li>
+                        <li><a href="moments.html">动态</a></li>
+                        <li><a href="gallery.html">图库</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联 系</h4>
+                    <ul>
+                        <li><a href="mailto:tangzimeng@sdust.edu.cn">邮箱</a></li>
+                        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="about.html">更多介绍</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 唐梓萌 · 保留所有权利</span>
+                <span class="kai">记录 · 复盘 · 思考 · 生活 · 国风</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/moments-static.js"></script>
+</body>
+</html>

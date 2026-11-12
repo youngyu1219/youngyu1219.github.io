@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>碎碎念：一些还没结论的想法 · 唐梓萌</title>
+    <meta name="description" content="零碎思考：关于学得慢一点、把重复的活脚本化、以及为什么坚持写下来。没有结论，只是记录。">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="nav-solid">
+
+    <nav class="nav">
+        <div class="nav-wrap">
+            <a class="brand" href="../index.html">
+                <span class="seal">唐</span>
+                <span>
+                    <span class="brand-name">唐梓萌</span>
+                    <span class="brand-sub">Tang Zimeng · GIS</span>
+                </span>
+            </a>
+            <button class="nav-toggle" aria-label="打开菜单">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="../index.html">首页</a>
+                <a href="../archives.html">文章</a>
+                <a href="../projects.html">项目</a>
+                <a href="../about.html">关于我</a>
+                <a href="../archives.html#timeline">归档</a>
+                <a href="../tech.html">技术</a>
+                <a href="../moments.html">动态</a>
+                <a href="../gallery.html">图库</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="article-hero">
+        <div class="container">
+            <div class="breadcrumb"><a href="../index.html">首页</a> / <a href="../archives.html">文章</a> / 零碎思考</div>
+            <h1>碎碎念：一些还没结论的想法</h1>
+            <div class="article-meta">
+                <span class="cat">零碎思考</span>
+                <span class="dot"></span>
+                <span>2026-10-18</span>
+                <span class="dot"></span>
+                <span>约 4 分钟阅读</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="prose-wrap">
+        <div class="container">
+            <article class="prose">
+
+                <p>有些想法太零碎，不值得单独成一篇，但攒在一起，也是一段思考的轨迹。这一篇不打算给出什么结论，只是把最近冒出来的念头记下来——说不定哪天它们自己就接上了。</p>
+
+                <h2>关于「慢一点」</h2>
+                <p>学 GIS 很容易焦虑。刷到别人发了论文、做了项目、拿了奖，再看自己还在和坐标系、投影、拓扑错误较劲，会觉得落后很多。但后来发现，很多「快」是靠前面「慢」堆出来的。</p>
+                <p>把一个概念真正搞懂，比囫囵吞枣地过十个教程有用。基础打牢一点，后面的路反而顺。所以现在我允许自己慢，只要每天比昨天多懂一点点。</p>
+                <blockquote>
+                    <p>方向对了，浪总会把你送到岸边。</p>
+                </blockquote>
+
+                <h2>关于「把重复的活脚本化」</h2>
+                <p>做矢量化、字段整理、拓扑检查，很多操作是重复的。一开始我靠鼠标点，点到怀疑人生。后来学着把流程写成脚本，世界一下子安静了。</p>
+                <p>比如给地块批量补一个分类字段，十几行 <code>arcpy</code> 就搞定：</p>
+                <pre><code># 把重复的字段计算交给脚本
+import arcpy
+
+fc = "parcels.shp"
+with arcpy.da.UpdateCursor(fc, ["DLMC", "kind"]) as cur:
+    for row in cur:
+        row[1] = "耕地" if str(row[0]).startswith("耕地") else "其他"
+        cur.updateRow(row)</code></pre>
+                <p>省下来的时间，不是用来摸鱼，而是用来想「下一步该做什么」——这才是人该干的活，而不是机器能替我做的那种。</p>
+
+                <h2>关于「写下来」</h2>
+                <p>这个博客，严格说没几个人看。但我还是坚持写，因为<strong>写下来，才算真的学会</strong>。你以为懂了，一动笔才发现逻辑是断的、概念是混的。写，是把模糊变清楚的过程。</p>
+                <ul>
+                    <li>建站手记，让我想清楚为什么要做这件事；</li>
+                    <li>环境踩坑，让我下次少翻一次车；</li>
+                    <li>学习计划，是给自己的一个交代；</li>
+                    <li>连青岛的海，都能让我想通一段卡了半天的代码。</li>
+                </ul>
+
+                <h2>写在最后</h2>
+                <p>这些念头没有结论，也不急着有。记录本身就是意义。等哪天它们串成线，也许就是下一篇像样的文章。</p>
+                <p>如果你也有类似的碎碎念，欢迎去「动态」里留言接话——那里更随意，不用像文章这么端着。</p>
+
+            </article>
+
+            <div class="post-end">
+                <div class="tags">
+                    <span class="tag">零碎思考</span>
+                    <span class="tag">随笔</span>
+                    <span class="tag">学习</span>
+                </div>
+                <a class="back" href="../archives.html">← 返回文章列表</a>
+            </div>
+
+            <div class="post-nav">
+                <a href="essay.html">
+                    <div class="dir">← 上一篇</div>
+                    <div class="t">青岛的海，与一段没写完的代码</div>
+                </a>
+                <a class="next" href="../archives.html">
+                    <div class="dir">返回 →</div>
+                    <div class="t">全部文章</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none;padding-top:0">
+                <span>© 2026 唐梓萌 · 保留所有权利</span>
+                <span class="kai">记录 · 复盘 · 思考 · 生活 · 国风</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

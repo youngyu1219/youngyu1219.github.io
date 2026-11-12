@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术说明 · 唐梓萌</title>
+    <meta name="description" content="这个国风个人博客用到的技术：HTML5、CSS3、原生 JavaScript、响应式布局与静态部署。">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="nav-solid">
+
+    <nav class="nav">
+        <div class="nav-wrap">
+            <a class="brand" href="index.html">
+                <span class="seal">唐</span>
+                <span>
+                    <span class="brand-name">唐梓萌</span>
+                    <span class="brand-sub">Tang Zimeng · GIS</span>
+                </span>
+            </a>
+            <button class="nav-toggle" aria-label="打开菜单">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="archives.html">文章</a>
+                <a href="projects.html">项目</a>
+                <a href="about.html">关于我</a>
+                <a href="archives.html#timeline">归档</a>
+                <a href="tech.html">技术</a>
+                <a href="moments.html">动态</a>
+                <a href="gallery.html">图库</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="tech-hero">
+        <div class="container">
+            <div class="eyebrow" style="font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--cinnabar);margin-bottom:16px">How This Site Is Built</div>
+            <h1>技术说明</h1>
+            <p>这个博客没有用重型框架，而是用最朴素的三件套——HTML、CSS、JavaScript，把国风的审美一点点搭出来。</p>
+        </div>
+    </header>
+
+    <!-- 技术栈 -->
+    <section class="section">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="seal">技</span>
+                <h2>用到的技术</h2>
+                <span class="sec-sub">Tech Stack</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="stack-grid">
+                <div class="stack-card reveal d1">
+                    <div class="stack-icon">结</div>
+                    <div class="stack-tag">STRUCTURE</div>
+                    <h3>HTML5 语义化结构</h3>
+                    <p>用 header / nav / main / section / article 组织页面，让结构清晰、便于维护与无障碍阅读。</p>
+                </div>
+                <div class="stack-card reveal d2">
+                    <div class="stack-icon">式</div>
+                    <div class="stack-tag">STYLE</div>
+                    <h3>CSS3 设计系统</h3>
+                    <p>以 CSS 变量统一配色与字体，Grid / Flex 布局，渐变、阴影与关键帧动画构成整套国风视觉。</p>
+                </div>
+                <div class="stack-card reveal d3">
+                    <div class="stack-icon">动</div>
+                    <div class="stack-tag">INTERACTION</div>
+                    <h3>原生 JavaScript</h3>
+                    <p>IntersectionObserver 做滚动揭示，手写轮播与移动端抽屉，不依赖任何第三方库。</p>
+                </div>
+                <div class="stack-card reveal d1">
+                    <div class="stack-icon">韵</div>
+                    <div class="stack-tag">AESTHETIC</div>
+                    <h3>国风字体与配色</h3>
+                    <p>朱砂红、墨色、宣纸米白与金赭构成主色；标题用宋体衬线，正文用无衬线，兼顾韵味与可读性。</p>
+                </div>
+                <div class="stack-card reveal d2">
+                    <div class="stack-icon">适</div>
+                    <div class="stack-tag">RESPONSIVE</div>
+                    <h3>响应式布局</h3>
+                    <p>媒体查询适配桌面与手机，移动端导航收纳为抽屉，栅格自动降列，保证小屏也干净。</p>
+                </div>
+                <div class="stack-card reveal d3">
+                    <div class="stack-icon">布</div>
+                    <div class="stack-tag">DEPLOY</div>
+                    <h3>静态部署</h3>
+                    <p>纯静态站点，可直接托管在 GitHub Pages、对象存储或任意 Web 服务器，无后端、无数据库。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 搭建流程 -->
+    <section class="section section--paper2">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="seal">序</span>
+                <h2>站点是怎么搭起来的</h2>
+                <span class="sec-sub">Workflow</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="flow">
+                <div class="flow-step reveal d1">
+                    <div class="num">01</div>
+                    <h4>结构</h4>
+                    <p>先定页面骨架：首页、文章、项目、关于、归档、404，规划统一的导航与页脚。</p>
+                </div>
+                <div class="flow-step reveal d2">
+                    <div class="num">02</div>
+                    <h4>样式</h4>
+                    <p>建立设计变量与复用组件（封面、卡片、按钮、印章、云纹），再逐页填充内容。</p>
+                </div>
+                <div class="flow-step reveal d3">
+                    <div class="num">03</div>
+                    <h4>交互</h4>
+                    <p>加入滚动揭示、轮播与滚动标语，让页面有节奏，但不过度打扰阅读。</p>
+                </div>
+                <div class="flow-step reveal d4">
+                    <div class="num">04</div>
+                    <h4>部署</h4>
+                    <p>静态文件直接托管上线，后续用 Git 管理版本，改一篇、推一次即可。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关键代码 -->
+    <section class="section">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="seal">码</span>
+                <h2>关键代码片段</h2>
+                <span class="sec-sub">Snippets</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="grid grid--2" style="align-items:start">
+                <div class="reveal d1">
+                    <p style="margin-bottom:14px;color:var(--ink-faint);font-family:var(--font-serif)">① 用 CSS 变量统一国风配色：</p>
+                    <pre class="code-note"><code><span class="c-com">/* 国风设计变量 */</span>
+<span class="c-key">:root</span> {
+  <span class="c-key">--ink</span>:      <span class="c-str">#221e18</span>;  <span class="c-com">/* 墨 */</span>
+  <span class="c-key">--paper</span>:    <span class="c-str">#f6f1e6</span>;  <span class="c-com">/* 宣纸米白 */</span>
+  <span class="c-key">--cinnabar</span>: <span class="c-str">#b23a2e</span>;  <span class="c-com">/* 朱砂红 */</span>
+  <span class="c-key">--jade</span>:     <span class="c-str">#2f6b5e</span>;  <span class="c-com">/* 青绿 */</span>
+  <span class="c-key">--gold</span>:     <span class="c-str">#b8934e</span>;  <span class="c-com">/* 金赭 */</span>
+}</code></pre>
+                </div>
+
+                <div class="reveal d2">
+                    <p style="margin-bottom:14px;color:var(--ink-faint);font-family:var(--font-serif)">② 滚动到视口时才播放入场动画：</p>
+                    <pre class="code-note"><code><span class="c-com">// 滚动揭示</span>
+<span class="c-key">const</span> io = <span class="c-key">new</span> IntersectionObserver((entries) =&gt; {
+  entries.forEach((e) =&gt; {
+    <span class="c-key">if</span> (e.isIntersecting) {
+      e.target.classList.add(<span class="c-str">'in'</span>);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: <span class="c-str">0.12</span> });
+
+document.querySelectorAll(<span class="c-str">'.reveal'</span>)
+  .forEach((el) =&gt; io.observe(el));</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 目录结构 -->
+    <section class="section section--paper2">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="seal">构</span>
+                <h2>目录结构</h2>
+                <span class="sec-sub">Structure</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="grid grid--2" style="align-items:start">
+                <pre class="code-note reveal d1"><code>blog-tang/
+├── index.html        <span class="c-com"># 首页</span>
+├── about.html        <span class="c-com"># 关于我</span>
+├── projects.html     <span class="c-com"># 项目</span>
+├── archives.html     <span class="c-com"># 文章 / 归档</span>
+├── tech.html         <span class="c-com"># 技术说明</span>
+├── 404.html          <span class="c-com"># 404 页</span>
+├── css/
+│   └── style.css     <span class="c-com"># 设计系统</span>
+├── js/
+│   └── main.js       <span class="c-com"># 交互脚本</span>
+├── img/              <span class="c-com"># 配图</span>
+└── posts/            <span class="c-com"># 文章页</span></code></pre>
+                <div class="reveal d2">
+                    <p style="color:var(--ink-soft);font-size:15.5px;margin-bottom:16px">整个站点没有构建步骤，也没有依赖包。克隆下来、双击 <code style="background:rgba(178,58,46,.08);color:var(--cinnabar-d);padding:2px 7px;border-radius:4px;font-family:var(--font-mono);font-size:13.5px">index.html</code> 就能在浏览器打开。</p>
+                    <p style="color:var(--ink-faint);font-size:14.5px;margin-bottom:20px">要发布时，把整个文件夹上传到 GitHub Pages 或任意静态托管即可。改一篇文章，只需要在 <code style="background:rgba(178,58,46,.08);color:var(--cinnabar-d);padding:2px 7px;border-radius:4px;font-family:var(--font-mono);font-size:13.5px">posts/</code> 下新增一个 HTML 文件。</p>
+                    <a class="btn btn--solid" href="about.html">回到关于我</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html">
+                        <span class="seal">唐</span>
+                        <span>
+                            <span class="brand-name">唐梓萌</span>
+                            <span class="brand-sub">Tang Zimeng · GIS</span>
+                        </span>
+                    </a>
+                    <p>记录学习笔记、项目复盘、零碎思考、个人成长和生活片段。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>导 航</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="archives.html">文章归档</a></li>
+                        <li><a href="projects.html">项目</a></li>
+                        <li><a href="about.html">关于我</a></li>
+                        <li><a href="tech.html">技术说明</a></li>
+                        <li><a href="moments.html">动态</a></li>
+                        <li><a href="gallery.html">图库</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联 系</h4>
+                    <ul>
+                        <li><a href="mailto:tangzimeng@sdust.edu.cn">邮箱</a></li>
+                        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="about.html">更多介绍</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 唐梓萌 · 保留所有权利</span>
+                <span class="kai">记录 · 复盘 · 思考 · 生活 · 国风</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

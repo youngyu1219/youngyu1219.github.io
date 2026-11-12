@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>从一张白纸到国风博客：我为什么重新搭站 · 唐梓萌</title>
+    <meta name="description" content="记录把旧主页改造成国风个人博客的全过程：技术选型、目录结构、踩过的坑。">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="nav-solid">
+
+    <nav class="nav">
+        <div class="nav-wrap">
+            <a class="brand" href="../index.html">
+                <span class="seal">唐</span>
+                <span>
+                    <span class="brand-name">唐梓萌</span>
+                    <span class="brand-sub">Tang Zimeng · GIS</span>
+                </span>
+            </a>
+            <button class="nav-toggle" aria-label="打开菜单">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="../index.html">首页</a>
+                <a href="../archives.html">文章</a>
+                <a href="../projects.html">项目</a>
+                <a href="../about.html">关于我</a>
+                <a href="../archives.html#timeline">归档</a>
+                <a href="../tech.html">技术</a>
+                <a href="../moments.html">动态</a>
+                <a href="../gallery.html">图库</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="article-hero">
+        <div class="container">
+            <div class="breadcrumb"><a href="../index.html">首页</a> / <a href="../archives.html">文章</a> / 建站手记</div>
+            <h1>从一张白纸到国风博客：我为什么重新搭站</h1>
+            <div class="article-meta">
+                <span class="cat">建站手记</span>
+                <span class="dot"></span>
+                <span>2026-10-28</span>
+                <span class="dot"></span>
+                <span>约 8 分钟阅读</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="prose-wrap">
+        <div class="container">
+            <article class="prose">
+
+                <p>原来的主页是一页式的「自我介绍」：一张封面、几个板块、一段联系信息。它能用，但装不下东西——笔记、项目、踩坑记录全散落在各种地方。于是我决定把它推倒重来，做成一个真正的个人博客。</p>
+
+                <h2>为什么要重做</h2>
+                <p>说到底，是「沉淀」两个字。学 GIS 和写代码一样，不写下来就很快忘。博客逼我把一件事讲清楚：从「我做过」变成「我能说明白」。这本身也是对自己的一种训练。</p>
+                <p>其次，我想让站点看起来「像我」。模板站千篇一律，不如自己动手，从配色到排版都按自己的审美来——于是有了现在这套国风国潮的路子。</p>
+
+                <h2>技术选型：为什么不用现成框架</h2>
+                <p>Hexo、Hugo 都很好，几分钟就能跑起来。但我这次想要的是<strong>完全掌控视觉</strong>：每一个留白、每一条金线、每一个印章的位置，我都想自己决定。</p>
+                <ul>
+                    <li><strong>HTML5</strong> —— 负责语义化的结构，一页一页手写。</li>
+                    <li><strong>CSS3</strong> —— 用变量统一配色与字体，Grid / Flex 排版。</li>
+                    <li><strong>原生 JavaScript</strong> —— 滚动揭示、轮播，不引入任何库。</li>
+                    <li><strong>纯静态</strong> —— 没有后端、没有数据库，部署极简。</li>
+                </ul>
+                <blockquote>
+                    <p>选型没有对错，只有合不合适。我要的是「轻」和「可控」，所以选择了最朴素的三件套。</p>
+                </blockquote>
+
+                <h2>目录结构</h2>
+                <p>整个站点就是一堆文件，结构一眼能看懂：</p>
+                <pre><code>blog-tang/
+├── index.html        # 首页
+├── about.html        # 关于我
+├── projects.html     # 项目
+├── archives.html     # 文章 / 归档
+├── tech.html         # 技术说明
+├── 404.html          # 404 页
+├── css/style.css     # 设计系统
+├── js/main.js        # 交互脚本
+├── img/              # 配图
+└── posts/            # 每一篇文章</code></pre>
+
+                <h2>部署：越简单越好</h2>
+                <p>静态站点最大的好处，就是部署几乎不花力气。把整个文件夹传到 GitHub Pages，或者任意一台装了 Nginx 的服务器，就能访问。本地预览更简单：</p>
+                <pre><code># 直接双击 index.html 就能看
+# 或者起一个本地静态服务，避免路径问题
+python -m http.server 8080
+
+# 然后浏览器打开 http://localhost:8080</code></pre>
+
+                <h2>踩过的坑</h2>
+                <ul>
+                    <li><strong>路径问题</strong>：文章放在 <code>posts/</code> 子目录里，引用样式和图片必须加 <code>../</code>，一开始漏了，页面直接「裸奔」。</li>
+                    <li><strong>移动端菜单</strong>：抽屉菜单打开后要能点击空白处关闭，否则在小屏上很难受。</li>
+                    <li><strong>动效过度</strong>：第一版加了太多动画，反而晃眼。后来只保留滚动揭示和轮播，克制一点更耐看。</li>
+                    <li><strong>图片体积</strong>：大图会让首屏变慢，后面要统一压一压。</li>
+                </ul>
+
+                <h2>接下来</h2>
+                <p>先把内容补齐：环境配置、遥感反演、数据库建库，一篇篇写。视觉上还会继续调，但方向是「更干净」，不是「更花哨」。</p>
+                <p>如果你也在搭自己的站点，欢迎交流——踩过的坑，能少一个是一个。</p>
+
+            </article>
+
+            <div class="post-end">
+                <div class="tags">
+                    <span class="tag">建站</span>
+                    <span class="tag">前端</span>
+                    <span class="tag">静态站点</span>
+                </div>
+                <a class="back" href="../archives.html">← 返回文章列表</a>
+            </div>
+
+            <div class="post-nav">
+                <a href="../archives.html">
+                    <div class="dir">← 返回</div>
+                    <div class="t">全部文章</div>
+                </a>
+                <a class="next" href="env-config.html">
+                    <div class="dir">下一篇 →</div>
+                    <div class="t">Miniconda 多环境 + GDAL 安装踩坑笔记</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none;padding-top:0">
+                <span>© 2026 唐梓萌 · 保留所有权利</span>
+                <span class="kai">记录 · 复盘 · 思考 · 生活 · 国风</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

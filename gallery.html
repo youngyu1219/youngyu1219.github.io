@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图库 | 唐梓萌</title>
+    <meta name="description" content="唐梓萌的图库：站点题图与动态里上传的影像，按网格陈列，点击可放大。">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="nav-solid">
+
+    <!-- 导航 -->
+    <nav class="nav">
+        <div class="nav-wrap">
+            <a class="brand" href="index.html">
+                <span class="seal">唐</span>
+                <span>
+                    <span class="brand-name">唐梓萌</span>
+                    <span class="brand-sub">Tang Zimeng · GIS</span>
+                </span>
+            </a>
+            <button class="nav-toggle" aria-label="打开菜单">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="archives.html">文章</a>
+                <a href="projects.html">项目</a>
+                <a href="about.html">关于我</a>
+                <a href="archives.html#timeline">归档</a>
+                <a href="tech.html">技术</a>
+                <a href="moments.html">动态</a>
+                <a href="gallery.html" class="active">图库</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页头 -->
+    <header class="page-hero">
+        <div class="container">
+            <div class="eyebrow">图库 · 影像</div>
+            <h1>图库</h1>
+            <p>把顺手的、好看的、有故事的照片收拢到这里——既有站点题图，也有动态里的影像瞬间。点击可放大，悬停图片可下载原图。</p>
+        </div>
+    </header>
+
+    <!-- 主体 -->
+    <main class="section">
+        <div class="container">
+            <div class="notice" id="notice" style="display:none">
+                <span class="ico">⚠</span>
+                <span>静态图库：图片来自站点本地资源，可直接打开浏览。</span>
+            </div>
+            <div class="gallery-grid" id="grid"></div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html">
+                        <span class="seal">唐</span>
+                        <span>
+                            <span class="brand-name">唐梓萌</span>
+                            <span class="brand-sub">Tang Zimeng · GIS</span>
+                        </span>
+                    </a>
+                    <p>记录学习笔记、项目复盘、零碎思考、个人成长和生活片段。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>导 航</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="archives.html">文章归档</a></li>
+                        <li><a href="projects.html">项目</a></li>
+                        <li><a href="about.html">关于我</a></li>
+                        <li><a href="tech.html">技术说明</a></li>
+                        <li><a href="moments.html">动态</a></li>
+                        <li><a href="gallery.html">图库</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联 系</h4>
+                    <ul>
+                        <li><a href="mailto:tangzimeng@sdust.edu.cn">邮箱</a></li>
+                        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="about.html">更多介绍</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 唐梓萌 · 保留所有权利</span>
+                <span class="kai">记录 · 复盘 · 思考 · 生活 · 国风</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 灯箱 -->
+    <div class="lightbox" id="lightbox">
+        <button class="lb-close" id="lbClose" aria-label="关闭">×</button>
+        <a class="lb-dl" id="lbDl" href="#" download>⬇ 下载原图</a>
+        <img id="lbImg" alt="放大查看">
+        <div class="lb-cap" id="lbCap"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+    (function () {
+        var grid = document.getElementById('grid');
+        var notice = document.getElementById('notice');
+        var lb = document.getElementById('lightbox');
+        var lbImg = document.getElementById('lbImg');
+        var lbCap = document.getElementById('lbCap');
+        var lbClose = document.getElementById('lbClose');
+
+        function esc(s) {
+            return (s || '').replace(/[&<>"']/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+
+        function fname(path) { return (path || 'image').split('/').pop() || 'image'; }
+
+        Promise.resolve({ images: [
+            { path: 'img/hero-home.png', title: '水墨山河 · 首页题图', source: 'site', author: '唐梓萌' },
+            { path: 'img/essay-qingdao.png', title: '青岛海岸 · 随笔配图', source: 'site', author: '唐梓萌' },
+            { path: 'img/project-landsat.png', title: 'Landsat 地表温度反演', source: 'site', author: '唐梓萌' },
+            { path: 'img/project-postgis.png', title: 'PostGIS 空间数据库建库', source: 'site', author: '唐梓萌' },
+            { path: 'img/project-blog.png', title: '个人博客搭建记录', source: 'site', author: '唐梓萌' }
+        ] }).then(function (data) {
+            var imgs = data.images || [];
+            if (!imgs.length) {
+                grid.innerHTML = '<p style="color:var(--ink-faint)">图库还是空的。</p>';
+                return;
+            }
+            imgs.forEach(function (it) {
+                var item = document.createElement('div');
+                item.className = 'gallery-item reveal';
+                var badge = it.source === 'site'
+                    ? '<span class="src-badge site">站点</span>'
+                    : '<span class="src-badge moment">动态</span>';
+                item.innerHTML = badge +
+                    '<img src="' + esc(it.path) + '" alt="' + esc(it.title) + '" loading="lazy">' +
+                    '<a class="dl-btn" href="' + esc(it.path) + '" download="' + esc(fname(it.path)) + '">⬇ 下载</a>' +
+                    '<div class="gallery-cap">' + esc(it.title) +
+                        '<span class="g-author">' + esc(it.author || '') + '</span></div>';
+                item.querySelector('.dl-btn').addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+                item.addEventListener('click', function () {
+                    lbImg.src = it.path;
+                    lbDl.href = it.path;
+                    lbDl.setAttribute('download', fname(it.path));
+                    lbCap.textContent = (it.title || '') + (it.author ? ' · ' + it.author : '');
+                    lb.classList.add('show');
+                });
+                grid.appendChild(item);
+            });
+            setTimeout(function () {
+                grid.querySelectorAll('.reveal').forEach(function (e) { e.classList.add('in'); });
+            }, 60);
+        });
+
+        function closeLb() { lb.classList.remove('show'); lbImg.src = ''; }
+        lbClose.addEventListener('click', closeLb);
+        lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+    })();
+    </script>
+</body>
+</html>

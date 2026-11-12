@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniconda 多环境 + GDAL 安装踩坑笔记 · 唐梓萌</title>
+    <meta name="description" content="GIS / 遥感环境隔离实践：conda 建环境、GDAL 与 Fiona 安装、Jupyter 内核注册。">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="nav-solid">
+
+    <nav class="nav">
+        <div class="nav-wrap">
+            <a class="brand" href="../index.html">
+                <span class="seal">唐</span>
+                <span>
+                    <span class="brand-name">唐梓萌</span>
+                    <span class="brand-sub">Tang Zimeng · GIS</span>
+                </span>
+            </a>
+            <button class="nav-toggle" aria-label="打开菜单">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="../index.html">首页</a>
+                <a href="../archives.html">文章</a>
+                <a href="../projects.html">项目</a>
+                <a href="../about.html">关于我</a>
+                <a href="../archives.html#timeline">归档</a>
+                <a href="../tech.html">技术</a>
+                <a href="../moments.html">动态</a>
+                <a href="../gallery.html">图库</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="article-hero">
+        <div class="container">
+            <div class="breadcrumb"><a href="../index.html">首页</a> / <a href="../archives.html">文章</a> / 踩坑记录</div>
+            <h1>Miniconda 多环境 + GDAL 安装踩坑笔记</h1>
+            <div class="article-meta">
+                <span class="cat">踩坑记录</span>
+                <span class="dot"></span>
+                <span>2026-10-25</span>
+                <span class="dot"></span>
+                <span>约 6 分钟阅读</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="prose-wrap">
+        <div class="container">
+            <article class="prose">
+
+                <p>做 GIS 和遥感，最烦的不是写代码，而是环境。不同项目依赖的 GDAL、Fiona、rasterio 版本经常打架。这篇记录我用 Miniconda 做环境隔离，以及安装 GDAL 时踩过的坑。</p>
+
+                <h2>一、为什么要用 conda</h2>
+                <p>pip 装地理空间库常常卡在「找不到 GEOS / PROJ」这类编译问题上。conda 直接给预编译好的二进制包，省心很多。所以我的原则是：<strong>地理空间相关的库，一律优先走 conda-forge。</strong></p>
+                <p>先建一个独立环境，别污染 base：</p>
+                <pre><code># 创建名为 gis 的环境，指定 Python 版本
+conda create -n gis python=3.11 -y
+
+# 激活
+conda activate gis</code></pre>
+
+                <h2>二、安装 GDAL 的坑</h2>
+                <p>最常见的错误是「pip 装完 import 报错」。原因是 pip 版 GDAL 需要本机已有对应版本的原生库，很容易版本对不上。改用 conda-forge 安装：</p>
+                <pre><code># 从 conda-forge 装，版本会自动匹配
+conda install -c conda-forge gdal fiona rasterio -y</code></pre>
+                <p>几个常见报错与处理：</p>
+                <table>
+                    <thead>
+                        <tr><th>报错现象</th><th>大概率原因</th><th>处理</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>ImportError: DLL load failed</td><td>原生库版本不匹配</td><td>统一用 conda-forge 安装</td></tr>
+                        <tr><td>找不到 PROJ 数据库</td><td>PROJ_LIB 环境变量缺失</td><td>重装 proj，检查环境变量</td></tr>
+                        <tr><td>pip 与 conda 混用后冲突</td><td>同一库装了两份</td><td>新建环境重来更省事</td></tr>
+                    </tbody>
+                </table>
+                <blockquote>
+                    <p>经验之谈：环境一旦被 pip 和 conda 混着装乱，最快的方法不是修，而是 <code>conda env remove</code> 掉重建。</p>
+                </blockquote>
+
+                <h2>三、注册 Jupyter 内核</h2>
+                <p>环境建好了，但 Jupyter 里看不到它。需要手动把环境注册成一个内核：</p>
+                <pre><code># 在 gis 环境里执行
+conda activate gis
+pip install ipykernel
+
+python -m ipykernel install --user --name gis --display-name "Python (gis)"</code></pre>
+                <p>之后打开 Jupyter，内核列表里就能选到 <code>Python (gis)</code> 了。如果启动内核报错，多半是 <code>ipykernel</code> 没装到对应环境里。</p>
+
+                <h2>四、一点小结</h2>
+                <ul>
+                    <li>一个项目一个环境，命名清楚，别嫌麻烦。</li>
+                    <li>地理空间库优先 conda-forge，少碰 pip。</li>
+                    <li>环境乱了就重建，比修补省时间。</li>
+                    <li>把常用命令记下来，下次直接抄。</li>
+                </ul>
+
+            </article>
+
+            <div class="post-end">
+                <div class="tags">
+                    <span class="tag">环境</span>
+                    <span class="tag">conda</span>
+                    <span class="tag">GDAL</span>
+                </div>
+                <a class="back" href="../archives.html">← 返回文章列表</a>
+            </div>
+
+            <div class="post-nav">
+                <a href="build-log.html">
+                    <div class="dir">← 上一篇</div>
+                    <div class="t">从一张白纸到国风博客</div>
+                </a>
+                <a class="next" href="study-plan.html">
+                    <div class="dir">下一篇 →</div>
+                    <div class="t">本学期 GIS 学习路线与读书清单</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none;padding-top:0">
+                <span>© 2026 唐梓萌 · 保留所有权利</span>
+                <span class="kai">记录 · 复盘 · 思考 · 生活 · 国风</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

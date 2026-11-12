@@ -1,0 +1,8 @@
+title: YoungYu | 个人主页
+page-top-title: 于弋洋
+top-section-bg-text: 探索与创新
+hero-side-text: Geographic Information Science
+hero-kicker: 道阻且长，行则将至
+hero-title: "以空间看世界\n以数据解问题"
+hero-description: 关注GIS与人工智能，多模态时空大数据分析
+copyright-text: © 2026-2030 YoungYu · 保留所有权利
