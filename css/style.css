@@ -842,6 +842,25 @@ ul, ol { list-style: none; }
 .content-markdown th:nth-child(2), .content-markdown td:nth-child(2) { min-width: 80px; }
 .content-markdown th:nth-child(5), .content-markdown td:nth-child(5) { width: 46px; min-width: 36px; max-width: 56px; text-align: center; }
 .content-markdown table th:nth-child(5) { white-space: normal; word-break: keep-all; line-height: 1.45; }
+
+#mentoring-md details {
+    margin-top: 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--card);
+}
+#mentoring-md summary {
+    padding: 12px 18px;
+    color: var(--ink);
+    cursor: pointer;
+}
+#mentoring-md summary::marker { color: var(--cinnabar-d); }
+#mentoring-md summary:hover { color: var(--cinnabar-d); }
+#mentoring-md summary:focus-visible { outline: 2px solid var(--cinnabar-d); outline-offset: 2px; }
+#mentoring-md summary small { color: var(--ink-soft); }
+#mentoring-md details[open] summary { border-bottom: 1px solid var(--line); }
+#mentoring-md details ul { margin: 10px 18px 14px 42px; }
+
 .profile-card {
     position: sticky;
     top: 100px;
